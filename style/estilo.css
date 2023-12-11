@@ -84,6 +84,7 @@ h2{
 .deshabilitado{
 	background-color:#FF5C33 !important;
 	cursor:default; /* MODIFICADO */
+	pointer-events: none;
 }
 
 .habilitado{
