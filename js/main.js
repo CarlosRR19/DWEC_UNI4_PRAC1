@@ -15,6 +15,7 @@ var siguiente = document.getElementById("siguiente");
 var primera = document.getElementById("primera");
 var ultima = document.getElementById("ultima");
 var anterior = document.getElementById("anterior");
+var imagen = document.getElementById("imagen");
 
 /* Se crea una funcion para comprobar la posición actual y establecer los estilos correspondientes en consecuencia:
 
@@ -61,47 +62,42 @@ window.addEventListener("load", cargar);
 
 function cargar() {
   comprobar();
-  document.getElementById("imagen").style.backgroundImage =
-    "url('" + IMAGENES[indiceImagenActual] + "')";
+  imagen.style.backgroundImage = "url('" + IMAGENES[indiceImagenActual] + "')";
 }
 
 // Se crean varios elementos "click" para cumplir con los requisitos cada vez que se hace click en cada uno de los botones
-document.getElementById("siguiente").addEventListener("click", next);
+siguiente.addEventListener("click", next);
 
 function next() {
   // Se actualiza la posición para acceder a la siguiente imagen dentro del array
   indiceImagenActual = indiceImagenActual + 1;
   comprobar();
-  document.getElementById("imagen").style.backgroundImage =
-    "url('" + IMAGENES[indiceImagenActual] + "')";
+  imagen.style.backgroundImage = "url('" + IMAGENES[indiceImagenActual] + "')";
 }
 
-document.getElementById("anterior").addEventListener("click", before);
+anterior.addEventListener("click", before);
 
 function before() {
   // Se actualiza la posición para acceder a la anterior imagen dentro del array
   indiceImagenActual = indiceImagenActual - 1;
   comprobar();
-  document.getElementById("imagen").style.backgroundImage =
-    "url('" + IMAGENES[indiceImagenActual] + "')";
+  imagen.style.backgroundImage = "url('" + IMAGENES[indiceImagenActual] + "')";
 }
 
-document.getElementById("primera").addEventListener("click", first);
+primera.addEventListener("click", first);
 
 function first() {
   // Se actualiza la posición para acceder a la primera imagen dentro del array
   indiceImagenActual = 0;
   comprobar();
-  document.getElementById("imagen").style.backgroundImage =
-    "url('" + IMAGENES[indiceImagenActual] + "')";
+  imagen.style.backgroundImage = "url('" + IMAGENES[indiceImagenActual] + "')";
 }
 
-document.getElementById("ultima").addEventListener("click", last);
+ultima.addEventListener("click", last);
 
 function last() {
   // Se actualiza la posición para acceder a la última imagen dentro del array
   indiceImagenActual = IMAGENES.length - 1;
   comprobar();
-  document.getElementById("imagen").style.backgroundImage =
-    "url('" + IMAGENES[indiceImagenActual] + "')";
+  imagen.style.backgroundImage = "url('" + IMAGENES[indiceImagenActual] + "')";
 }
